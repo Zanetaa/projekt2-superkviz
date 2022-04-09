@@ -57,6 +57,12 @@ let obrazek = document.querySelector('#obrazek')
 
 let moznosti = document.querySelector('#moznosti')
 
+//Z hodiny:
+/* let seznamOdpovedi = document.createElement('li');
+
+let seznam = document.querySelector('ul');
+seznam.appendChild(seznamOdpovedi); */
+
 let odpovedi = document.querySelector('#odpovedi');
 let odpoved1 = document.createElement('li'); 
 let odpoved2 = document.createElement('li');
@@ -71,7 +77,16 @@ let vysledek = document.querySelector('.vysledek');
 
 let i =0;
 
-function priNacteni() {
+// Tato funkce se postará o vygenerování otázky
+// Zavoláme ji jednou na začátku a poté vždy po odpovězení
+
+//Z hodiny:
+//" cyklus for"
+ /* for (let i = 0; i < 10 ; i=i+1) {
+     console.log(i)
+ } */
+
+ function zobrazOtazku() {
     poradi.innerHTML = otazky[i].cisloOtazky;
     obrazek.src = otazky[i].obrazek;
     otazka.innerHTML = otazky[i].otazka;
@@ -80,18 +95,17 @@ function priNacteni() {
     odpoved3.innerHTML = otazky[i].odpoved3;
 }
 
+ 
+// Funkce se postará o obsluhu kliknutí na odpověď
+// Musíme ji navázat na kokrétní odpovědi každé otázky (to uděláme v rámci funkce zobrazOtazku())
 
-/* let seznamOdpovedi = document.createElement('li');
-
-let seznam = document.querySelector('ul');
-seznam.appendChild(seznamOdpovedi); */
-
-
+//Z hodiny:
 //" cyklus for"
  /* for (let i = 0; i < 10 ; i=i+1) {
      console.log(i)
  } */
 
+//Z hodiny:
 /* poleOtazek.sort(porovnej);
  fucntion porovnej (odpoved1, odpoved 2, odpoved3, spravne) {
 if (odpoved1 = spravne) {
@@ -102,13 +116,15 @@ if (odpoved1 = spravne) {
 }; */
 
 
-// Tato funkce se postará o vygenerování otázky
-// Zavoláme ji jednou na začátku a poté vždy po odpovězení
-function zobrazOtazku() {}
 
-// Funkce se postará o obsluhu kliknutí na odpověď
-// Musíme ji navázat na kokrétní odpovědi každé otázky (to uděláme v rámci funkce zobrazOtazku())
-function klikNaOdpoved() {}
+function klikNaOdpoved() {
+
+i++
+
+
+
+    zobrazOtazku();
+} 
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
 // Vypočítám skóre a nageneruje nové elementy do HTML
