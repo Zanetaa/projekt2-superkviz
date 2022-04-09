@@ -44,11 +44,25 @@ let foto = document.querySelector('.foto')
 let obrazek = document.querySelector('#obrazek')
 
 let moznosti = document.querySelector('#moznosti')
-let odpovedi = document.querySelector('#odpovedi')
+
+let odpovedi = document.querySelector('#odpovedi');
+let odpoved1 = document.createElement('li');
+let odpoved2 = document.createElement('li');
+let odpoved3 = document.createElement('li');
 
 let vysledek = document.querySelector('.vysledek')
 
-let i =0;
+
+let seznamOdpovedi = document.createElement('li');
+
+let seznam = document.querySelector('ul');
+seznam.appendChild(seznamOdpovedi);
+
+
+
+ for (let i = 0; i < 10 ; i=i+1) {
+     console.log(i)
+ }
 
 
 // Tato funkce se postará o vygenerování otázky
