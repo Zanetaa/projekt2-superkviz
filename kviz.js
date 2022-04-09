@@ -77,7 +77,7 @@ odpovedi.appendChild(odpoved3);
 
 let vysledek = document.querySelector('.vysledek');
 
-let i =0;
+let zobrazenaOtazka =0;
 
 // Tato funkce se postará o vygenerování otázky
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení
@@ -89,12 +89,12 @@ let i =0;
  } */
 
  function zobrazOtazku() {
-    poradi.innerHTML = otazky[i].cisloOtazky;
-    obrazek.src = otazky[i].obrazek;
-    otazka.innerHTML = otazky[i].otazka;
-    odpoved1.innerHTML = otazky[i].odpoved1;
-    odpoved2.innerHTML = otazky[i].odpoved2;
-    odpoved3.innerHTML = otazky[i].odpoved3;
+    poradi.innerHTML = otazky[zobrazenaOtazka].cisloOtazky;
+    obrazek.src = otazky[zobrazenaOtazka].obrazek;
+    otazka.innerHTML = otazky[zobrazenaOtazka].otazka;
+    odpoved1.innerHTML = otazky[zobrazenaOtazka].odpoved1;
+    odpoved2.innerHTML = otazky[zobrazenaOtazka].odpoved2;
+    odpoved3.innerHTML = otazky[zobrazenaOtazka].odpoved3;
 
     //pokus s možnostma
     /*pocetMoznosti = otazky[i].moznosti.length;*/
@@ -125,14 +125,18 @@ if (cisl1 = cisl2) {
 }
 }; */
 
-let volbaOdpovedi = [];
-
 
 function klikNaOdpoved() {
-    
 
-    zobrazOtazku();
-} 
+    zobrazenaOtazka = zobrazenaOtazka+1;
+
+    if (zobrazenaOtazka < otazky.length) {
+        zobrazOtazku();
+    } else {
+        zobrazVyhodnoceni()
+    }
+}
+
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
 // Vypočítám skóre a nageneruje nové elementy do HTML
