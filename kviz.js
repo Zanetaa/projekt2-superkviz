@@ -64,6 +64,8 @@ let seznam = document.querySelector('ul');
 seznam.appendChild(seznamOdpovedi); */
 
 let odpovedi = document.querySelector('#odpovedi');
+/*let moznosti = document.createElement('li');*/
+
 let odpoved1 = document.createElement('li'); 
 let odpoved2 = document.createElement('li');
 let odpoved3 = document.createElement('li'); 
@@ -93,7 +95,15 @@ let i =0;
     odpoved1.innerHTML = otazky[i].odpoved1;
     odpoved2.innerHTML = otazky[i].odpoved2;
     odpoved3.innerHTML = otazky[i].odpoved3;
-}
+
+    //pokus s možnostma
+    /*pocetMoznosti = otazky[i].moznosti.length;*/
+
+ }
+
+    /*for (i < pocetMoznosti; i=i+1) {
+        otazka.addEventListener("click")
+    }*/
 
  
 // Funkce se postará o obsluhu kliknutí na odpověď
@@ -105,7 +115,7 @@ let i =0;
      console.log(i)
  } */
 
-//Můj pokus:
+//Pokus / z hodiny:
 /* poleOtazek.sort(porovnej);
  fucntion porovnej (cisl1, cisl3) {
 if (cisl1 = cisl2) {
@@ -115,13 +125,11 @@ if (cisl1 = cisl2) {
 }
 }; */
 
-function vybiramOdpoved() {
-    if 
-
-}
+let volbaOdpovedi = [];
 
 
 function klikNaOdpoved() {
+    
 
     zobrazOtazku();
 } 
