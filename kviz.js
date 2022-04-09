@@ -105,23 +105,23 @@ let i =0;
      console.log(i)
  } */
 
-//Z hodiny:
+//Můj pokus:
 /* poleOtazek.sort(porovnej);
- fucntion porovnej (odpoved1, odpoved 2, odpoved3, spravne) {
-if (odpoved1 = spravne) {
+ fucntion porovnej (cisl1, cisl3) {
+if (cisl1 = cisl2) {
     return To je správně!;
 } else {
     return To je špatně
 }
 }; */
 
+function vybiramOdpoved() {
+    if 
+
+}
 
 
 function klikNaOdpoved() {
-
-i++
-
-
 
     zobrazOtazku();
 } 
