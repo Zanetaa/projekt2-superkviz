@@ -1,6 +1,36 @@
-// Nejdříve si vytvoř objekt, který bude držet voje super otázky :-)
+// Nejdříve si vytvoř objekt, který bude držet tvoje super otázky :-)
 
-const otazky = [];
+const otazky = [{
+    cisloOtazky: 1,
+    otazka: "Jaká je Žanety oblíbená pohádková princezna?",
+    obrazek: "obrazky/snehurka.jpg",
+    moznosti: ['Sněhurka', 'Popelka', 'Malá mořská víla Ariel'],
+    spravne: "Sněhurka"
+},
+
+    {   
+    cisloOtazky: 2,
+    otazka: "Jaká je Žanety nejoblíbenější ovoce?",
+    obrazek: "obrazky/ovoce.jpg",
+    moznosti: ['Jahody', 'Třešně', 'Meloun'],
+    spravne: "Třešně"
+    },
+
+    {cisloOtazky: 3,
+    otazka: "Která evrpská země má největší spotřebu piva na hlavu?",
+    obrazek: "obrazky/pivo.jpg",
+    moznosti: ['Česká republika', 'Belgie', 'Německo'],
+    spravne: "Česká republika"
+    },
+
+    {cisloOtazky: 4,
+    otazka: "Co je ikonická hračka z 80. let?",
+    obrazek: "obrazky/moncicak.jpg",
+    moznosti: ['Kočičák', 'Mončičák', 'Opičák'],
+    spravne: "Mončičák"
+    },
+
+];
 
 // Dále budeš potřebovat další proměnné - jaké?
 
