@@ -67,7 +67,18 @@ odpovedi.appendChild(odpoved2);
 odpovedi.appendChild(odpoved3);
 
 
-let vysledek = document.querySelector('.vysledek')
+let vysledek = document.querySelector('.vysledek');
+
+let i =0;
+
+function priNacteni() {
+    poradi.innerHTML = otazky[i].cisloOtazky;
+    obrazek.src = otazky[i].obrazek;
+    otazka.innerHTML = otazky[i].otazka;
+    odpoved1.innerHTML = otazky[i].odpoved1;
+    odpoved2.innerHTML = otazky[i].odpoved2;
+    odpoved3.innerHTML = otazky[i].odpoved3;
+}
 
 
 /* let seznamOdpovedi = document.createElement('li');
@@ -76,10 +87,19 @@ let seznam = document.querySelector('ul');
 seznam.appendChild(seznamOdpovedi); */
 
 
-//určitě budu používat " cyklus for"
+//" cyklus for"
  /* for (let i = 0; i < 10 ; i=i+1) {
      console.log(i)
  } */
+
+/* poleOtazek.sort(porovnej);
+ fucntion porovnej (odpoved1, odpoved 2, odpoved3, spravne) {
+if (odpoved1 = spravne) {
+    return To je správně!;
+} else {
+    return To je špatně
+}
+}; */
 
 
 // Tato funkce se postará o vygenerování otázky
