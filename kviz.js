@@ -5,9 +5,9 @@ const otazky = [{
     otazka: "Jaká je Žanety oblíbená pohádková princezna?",
     obrazek: "obrazky/snehurka.jpg",
     moznostiOdpovedi: ['Sněhurka', 'Popelka', 'Malá mořská víla Ariel'],
-    /*odpoved1:'Sněhurka',
-    odpoved2:'Popelka',
-    odpoved3:'Malá mořská víla Ariel',*/
+    /*moznost1:'Sněhurka',
+    moznost2:'Popelka',
+    moznost3:'Malá mořská víla Ariel',*/
     spravne: 'Sněhurka' 
     },
 
@@ -16,9 +16,9 @@ const otazky = [{
     otazka: "Jaká je Žanety nejoblíbenější ovoce?",
     obrazek: "obrazky/ovoce.jpg",
     moznostiOdpovedi: ['Jahody', 'Třešně', 'Meloun'],
-    /*odpoved1:'Jahody',
-    odpoved2:'Třešně',
-    odpoved3:'Meloun',*/
+    /*moznost1:'Jahody',
+    moznost2:'Třešně',
+    moznost3:'Meloun',*/
     spravne: 'Třešně'
     },
 
@@ -26,9 +26,9 @@ const otazky = [{
     otazka: "Která evrpská země má největší spotřebu piva na hlavu?",
     obrazek: "obrazky/pivo.jpg",
     moznostiOdpovedi: ['Česká republika', 'Belgie', 'Německo'],
-    /*odpoved1:'Česká republika',
-    odpoved2:'Belgie',
-    odpoved3:'Německo',*/
+    /*moznost1:'Česká republika',
+    moznost2:'Belgie',
+    moznost3:'Německo',*/
     spravne: 'Česká republika'
     },
 
@@ -36,9 +36,9 @@ const otazky = [{
     otazka: "Co je ikonická hračka z 80. let?",
     obrazek: "obrazky/moncicak.jpg",
     moznostiOdpovedi: ['Kočičák', 'Mončičák', 'Opičák'],
-    /*odpoved1:'Kočičák',
-    odpoved2:'Mončičák',
-    odpoved3:'Opičák',*/
+    /*moznost1:'Kočičák',
+    moznosz2:'Mončičák',
+    moznost3:'Opičák',*/
     spravne: 'Mončičák'
     },
 
@@ -97,17 +97,17 @@ let vysledek = document.querySelector('.vysledek');
 
     /*moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[i];*/
 
-    /* let odpoved1 = document.createElement('li'); 
-    let odpoved2 = document.createElement('li');
-    let odpoved3 = document.createElement('li'); 
+    /* let moznost1 = document.createElement('li'); 
+    let moznost2 = document.createElement('li');
+    let moznost3 = document.createElement('li'); 
 
-    odpovedi.appendChild(odpoved1);
-    odpovedi.appendChild(odpoved2);
-    odpovedi.appendChild(odpoved3); */
+    odpovedi.appendChild(moznost1);
+    odpovedi.appendChild(moznost2);
+    odpovedi.appendChild(moznost3); */
 
-    /*odpoved1.innerHTML = otazky[zobrazenaOtazka].odpoved1;
-    odpoved2.innerHTML = otazky[zobrazenaOtazka].odpoved2;
-    odpoved3.innerHTML = otazky[zobrazenaOtazka].odpoved3;*/
+    /*moznost1.innerHTML = otazky[zobrazenaOtazka].moznost1;
+    moznost2.innerHTML = otazky[zobrazenaOtazka].moznost2;
+    moznost3.innerHTML = otazky[zobrazenaOtazka].moznost3;*/
 
     //nedaří se mi připojit ten set možností..otázka se mi načte jen když mám nahoře vypasné otázky bod po bodu ale to podle mě není cesta ..
     for (let i=0; i < otazky[zobrazenaOtazka]; i=i+1) {
