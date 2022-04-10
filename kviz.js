@@ -55,7 +55,7 @@ let foto = document.querySelector('.foto')
 
 let obrazek = document.querySelector('#obrazek')
 
-let moznosti = document.querySelector('#moznosti')
+/*let moznosti = document.querySelector('#moznosti')*/
 
 //Z hodiny:
 /* let seznamOdpovedi = document.createElement('li');
