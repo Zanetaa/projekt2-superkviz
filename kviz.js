@@ -79,8 +79,6 @@ document.querySelector('moznosti').appendchild(odpovedi); */
 
 let vysledek = document.querySelector('.vysledek');
 
-let zobrazenaOtazka =0;
-
 // Tato funkce se postará o vygenerování otázky
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení
 
@@ -90,6 +88,7 @@ let zobrazenaOtazka =0;
      console.log(i)
  } */
 
+ let zobrazenaOtazka =0;
 
  function zobrazOtazku() {
     poradi.innerHTML = 'Otázka č. ' + otazky[zobrazenaOtazka].cisloOtazky;
@@ -140,7 +139,7 @@ if (cisl1 = cisl2) {
 
 let spravneOdpovezeno = 0
 
-//Tady mi ještě chybí vměstnat, jak tu možnost zvolím..
+//Tady mi ještě chybí vměstnat, jak tu možnost zvolím..?!
 function spravnaOdpoved() {
     if (spravne === moznostiOdpovedi[i]) {
         console.log('Tohle je správně');
@@ -165,24 +164,6 @@ function klikNaOdpoved() {
         zobrazVyhodnoceni()
     } 
 }
-
-
-/*function spravnaOdpoved2() {
-    if (spravne === odpoved2) {
-        console.log('Tohle je správně') 
-    } else {
-        console.log('Tohle je špatně')
-    }
-}
-
-
-function spravnaOdpoved3() {
-    if (spravne === odpoved3) {
-        console.log('Tohle je správně') 
-    } else {
-        console.log('Tohle je špatně')
-    }
-} */
 
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
