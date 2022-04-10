@@ -77,16 +77,6 @@ odpovedi.appendChild(moznost);
 document.querySelector('moznosti').appendchild(odpovedi); */
 
 
-/* let odpoved1 = document.createElement('li'); 
-let odpoved2 = document.createElement('li');
-let odpoved3 = document.createElement('li'); 
-
-odpovedi.appendChild(odpoved1);
-odpovedi.appendChild(odpoved2);
-odpovedi.appendChild(odpoved3); */
-
-
-
 let vysledek = document.querySelector('.vysledek');
 
 let zobrazenaOtazka =0;
@@ -104,7 +94,17 @@ let zobrazenaOtazka =0;
     poradi.innerHTML = otazky[zobrazenaOtazka].cisloOtazky;
     obrazek.src = otazky[zobrazenaOtazka].obrazek;
     otazka.innerHTML = otazky[zobrazenaOtazka].otazka;
+
     /*moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[i];*/
+
+    /* let odpoved1 = document.createElement('li'); 
+    let odpoved2 = document.createElement('li');
+    let odpoved3 = document.createElement('li'); 
+
+    odpovedi.appendChild(odpoved1);
+    odpovedi.appendChild(odpoved2);
+    odpovedi.appendChild(odpoved3); */
+
     /*odpoved1.innerHTML = otazky[zobrazenaOtazka].odpoved1;
     odpoved2.innerHTML = otazky[zobrazenaOtazka].odpoved2;
     odpoved3.innerHTML = otazky[zobrazenaOtazka].odpoved3;*/
