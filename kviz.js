@@ -117,35 +117,13 @@ let zobrazenaOtazka =0;
 
     odpovedi.appendChild(moznost);
 
-    moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[a];
+    moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[i];
      }
-
-    
-    //tohle by mi fungovalo, kdybych použila "možnosti" místo odpovědi..ale nejde mi to s něma.. teď je to nefunkční kód
-     //pokusy, pokusy, pokusy...
-    
-   /*for (let i=0; i < otazky[zobrazenaOtazka].moznostiOdpovedi.length; i=i+1) {
-
-        /*let odpovedi = document.querySelector('#odpovedi');*/
-        /*let moznosti = document.createElement('li'); */
-
-        /*let moznost = document.createElement('li'); 
-        moznost.setAttribute('odpovedi', i);
-        moznost.setAttribute('kliknuti', 'klikNaOdpoved');
-        moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[i];
-
-        odpovedi.appendChild(moznost);
-    } */
-    //pokus s možnostma
-    /*pocetMoznosti = otazky[i].moznosti.length;*/
 
  }
 
-    /*for (i < pocetMoznosti; i=i+1) {
-        otazka.addEventListener("click")
-    }*/
+ zobrazOtazku();
 
- 
 // Funkce se postará o obsluhu kliknutí na odpověď
 // Musíme ji navázat na kokrétní odpovědi každé otázky (to uděláme v rámci funkce zobrazOtazku())
 
@@ -168,6 +146,9 @@ if (cisl1 = cisl2) {
 
 function klikNaOdpoved() {
 
+    /* for (let i= 0; i < pocetMoznosti; i=i+1) {
+    otazka.addEventListener("click") }*/
+
    zobrazenaOtazka = zobrazenaOtazka + 1;
 
     if (zobrazenaOtazka < otazky.length) {
@@ -177,7 +158,6 @@ function klikNaOdpoved() {
     } 
 }
 
-//Tohle by mi dávalo větší smysl, kdybych měla set "moznostiOdpovedi", ale s tím mi to nějak nefunguje..
 function spravnaOdpoved() {
     if (spravne === moznostiOdpovedi[a]) {
         console.log('Tohle je správně') 
