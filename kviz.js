@@ -91,7 +91,7 @@ let zobrazenaOtazka =0;
  } */
 
  function zobrazOtazku() {
-    poradi.innerHTML = otazky[zobrazenaOtazka].cisloOtazky;
+    poradi.innerHTML = 'Otázka č. ' + otazky[zobrazenaOtazka].cisloOtazky;
     obrazek.src = otazky[zobrazenaOtazka].obrazek;
     otazka.innerHTML = otazky[zobrazenaOtazka].otazka;
 
