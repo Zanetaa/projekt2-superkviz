@@ -90,6 +90,7 @@ let zobrazenaOtazka =0;
      console.log(i)
  } */
 
+
  function zobrazOtazku() {
     poradi.innerHTML = 'Otázka č. ' + otazky[zobrazenaOtazka].cisloOtazky;
     obrazek.src = otazky[zobrazenaOtazka].obrazek;
@@ -126,12 +127,6 @@ let zobrazenaOtazka =0;
 
 // Funkce se postará o obsluhu kliknutí na odpověď
 // Musíme ji navázat na kokrétní odpovědi každé otázky (to uděláme v rámci funkce zobrazOtazku())
-
-//Z hodiny:
-//" cyklus for"
- /* for (let i = 0; i < 10 ; i=i+1) {
-     console.log(i)
- } */
 
 //Pokus // z hodiny:
 /* poleOtazek.sort(porovnej);
