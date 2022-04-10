@@ -5,10 +5,10 @@ const otazky = [{
     otazka: "Jaká je Žanety oblíbená pohádková princezna?",
     obrazek: "obrazky/snehurka.jpg",
     moznostiOdpovedi: ['Sněhurka', 'Popelka', 'Malá mořská víla Ariel'],
-    odpoved1:'Sněhurka',
+    /*odpoved1:'Sněhurka',
     odpoved2:'Popelka',
-    odpoved3:'Malá mořská víla Ariel',
-    spravne: 'Sněhurka'
+    odpoved3:'Malá mořská víla Ariel',*/
+    spravne: 'Sněhurka' 
     },
 
     {   
@@ -16,9 +16,9 @@ const otazky = [{
     otazka: "Jaká je Žanety nejoblíbenější ovoce?",
     obrazek: "obrazky/ovoce.jpg",
     moznostiOdpovedi: ['Jahody', 'Třešně', 'Meloun'],
-    odpoved1:'Jahody',
+    /*odpoved1:'Jahody',
     odpoved2:'Třešně',
-    odpoved3:'Meloun',
+    odpoved3:'Meloun',*/
     spravne: 'Třešně'
     },
 
@@ -26,9 +26,9 @@ const otazky = [{
     otazka: "Která evrpská země má největší spotřebu piva na hlavu?",
     obrazek: "obrazky/pivo.jpg",
     moznostiOdpovedi: ['Česká republika', 'Belgie', 'Německo'],*/
-    odpoved1:'Česká republika',
+    /*odpoved1:'Česká republika',
     odpoved2:'Belgie',
-    odpoved3:'Německo',
+    odpoved3:'Německo',*/
     spravne: 'Česká republika'
     },
 
@@ -36,9 +36,9 @@ const otazky = [{
     otazka: "Co je ikonická hračka z 80. let?",
     obrazek: "obrazky/moncicak.jpg",
     moznostiOdpovedi: ['Kočičák', 'Mončičák', 'Opičák'],
-    odpoved1:'Kočičák',
+    /*odpoved1:'Kočičák',
     odpoved2:'Mončičák',
-    odpoved3:'Opičák',
+    odpoved3:'Opičák',*/
     spravne: 'Mončičák'
     },
 
@@ -63,22 +63,27 @@ let moznosti = document.querySelector('#moznosti')
 let seznam = document.querySelector('ul');
 seznam.appendChild(seznamOdpovedi); */
 
-let odpovedi = document.querySelector('#odpovedi');
+/*let odpovedi = document.querySelector('#odpovedi');*/
 /*let moznosti = document.createElement('li');*/
 
 /* let moznost = document.createElement('li'); 
 
 odpovedi.appendChild(moznost); */
 
-let moznostiOdpovedi[0] = document.createElement('li'); 
+/*let odpovedi = document.createElement('ul');
+let moznost = document.createElement('li');
+moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[a];
+odpovedi.appendChild(moznost);
+document.querySelector('moznosti').appendchild(odpovedi); */
 
-let odpoved1 = document.createElement('li'); 
+
+/* let odpoved1 = document.createElement('li'); 
 let odpoved2 = document.createElement('li');
 let odpoved3 = document.createElement('li'); 
 
 odpovedi.appendChild(odpoved1);
 odpovedi.appendChild(odpoved2);
-odpovedi.appendChild(odpoved3);
+odpovedi.appendChild(odpoved3); */
 
 
 
@@ -100,20 +105,31 @@ let zobrazenaOtazka =0;
     obrazek.src = otazky[zobrazenaOtazka].obrazek;
     otazka.innerHTML = otazky[zobrazenaOtazka].otazka;
     /*moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[i];*/
-    odpoved1.innerHTML = otazky[zobrazenaOtazka].odpoved1;
+    /*odpoved1.innerHTML = otazky[zobrazenaOtazka].odpoved1;
     odpoved2.innerHTML = otazky[zobrazenaOtazka].odpoved2;
-    odpoved3.innerHTML = otazky[zobrazenaOtazka].odpoved3;
+    odpoved3.innerHTML = otazky[zobrazenaOtazka].odpoved3;*/
+
+    //nedaří se mi připojit ten set možností..otázka se mi načte jen když mám nahoře vypasné otázky bod po bodu ale to podle mě není cesta ..
+    for (let a=0; a < otazky[zobrazenaOtazka]; a=a+1) {
+
+    let odpovedi = document.querySelector('#odpovedi')
+    let moznost = document.createElement('li');
+
+    odpovedi.appendChild(moznost);
+
+    moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[a];
+     }
 
     
     //tohle by mi fungovalo, kdybych použila "možnosti" místo odpovědi..ale nejde mi to s něma.. teď je to nefunkční kód
-
+     //pokusy, pokusy, pokusy...
     
-   /* for (let i=0; i < otazky[zobrazenaOtazka].moznostiOdpovedi.length; i=i+1) {
+   /*for (let i=0; i < otazky[zobrazenaOtazka].moznostiOdpovedi.length; i=i+1) {
 
-        let odpovedi = document.querySelector('#odpovedi');
+        /*let odpovedi = document.querySelector('#odpovedi');*/
         /*let moznosti = document.createElement('li'); */
 
-      /*  let moznost = document.createElement('li'); 
+        /*let moznost = document.createElement('li'); 
         moznost.setAttribute('odpovedi', i);
         moznost.setAttribute('kliknuti', 'klikNaOdpoved');
         moznost.innerHTML = otazky[zobrazenaOtazka].moznostiOdpovedi[i];
@@ -162,15 +178,15 @@ function klikNaOdpoved() {
 }
 
 //Tohle by mi dávalo větší smysl, kdybych měla set "moznostiOdpovedi", ale s tím mi to nějak nefunguje..
-function spravnaOdpoved1() {
-    if (spravne === odpoved1) {
+function spravnaOdpoved() {
+    if (spravne === moznostiOdpovedi[a]) {
         console.log('Tohle je správně') 
     } else {
         console.log('Tohle je špatně')
     }
 }
 
-function spravnaOdpoved2() {
+/*function spravnaOdpoved2() {
     if (spravne === odpoved2) {
         console.log('Tohle je správně') 
     } else {
@@ -185,7 +201,7 @@ function spravnaOdpoved3() {
     } else {
         console.log('Tohle je špatně')
     }
-}
+} */
 
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
