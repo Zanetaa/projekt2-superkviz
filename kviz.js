@@ -25,7 +25,7 @@ const otazky = [{
     {cisloOtazky: 3,
     otazka: "Která evrpská země má největší spotřebu piva na hlavu?",
     obrazek: "obrazky/pivo.jpg",
-    moznostiOdpovedi: ['Česká republika', 'Belgie', 'Německo'],*/
+    moznostiOdpovedi: ['Česká republika', 'Belgie', 'Německo'],
     /*odpoved1:'Česká republika',
     odpoved2:'Belgie',
     odpoved3:'Německo',*/
