@@ -109,7 +109,7 @@ let vysledek = document.querySelector('.vysledek');
     moznost2.innerHTML = otazky[zobrazenaOtazka].moznost2;
     moznost3.innerHTML = otazky[zobrazenaOtazka].moznost3;*/
 
-    //nedaří se mi připojit ten set možností..otázka se mi načte jen když mám nahoře vypasné otázky bod po bodu ale to podle mě není cesta ..
+    //nedaří se mi připojit ten set možností..otázka se mi načte jen když mám nahoře vypasné otázky bod po bodu :(..raději bych měla vypasné jako set
     for (let i=0; i < otazky[zobrazenaOtazka]; i=i+1) {
 
     let odpovedi = document.querySelector('#odpovedi')
