@@ -143,6 +143,17 @@ if (cisl1 = cisl2) {
 }
 }; */
 
+let spravneOdpovezeno = O
+
+//Tady mi ještě chybí vměstnat, jak tu možnost zvolím..
+function spravnaOdpoved() {
+    if (spravne === moznostiOdpovedi[i]) {
+        console.log('Tohle je správně');
+        spravneOdpovezeno = spravneOdpovezeno + 1;
+    } else {
+        console.log('Tohle je špatně');
+    }
+}
 
 function klikNaOdpoved() {
 
@@ -152,19 +163,14 @@ function klikNaOdpoved() {
    zobrazenaOtazka = zobrazenaOtazka + 1;
 
     if (zobrazenaOtazka < otazky.length) {
+        console.log('Otázka');
         zobrazOtazku();
     } else {
+        console.log('Vyhodnocení')
         zobrazVyhodnoceni()
     } 
 }
 
-function spravnaOdpoved() {
-    if (spravne === moznostiOdpovedi[a]) {
-        console.log('Tohle je správně') 
-    } else {
-        console.log('Tohle je špatně')
-    }
-}
 
 /*function spravnaOdpoved2() {
     if (spravne === odpoved2) {
