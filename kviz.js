@@ -110,7 +110,7 @@ let zobrazenaOtazka =0;
     odpoved3.innerHTML = otazky[zobrazenaOtazka].odpoved3;*/
 
     //nedaří se mi připojit ten set možností..otázka se mi načte jen když mám nahoře vypasné otázky bod po bodu ale to podle mě není cesta ..
-    for (let a=0; a < otazky[zobrazenaOtazka]; a=a+1) {
+    for (let i=0; i < otazky[zobrazenaOtazka]; i=i+1) {
 
     let odpovedi = document.querySelector('#odpovedi')
     let moznost = document.createElement('li');
@@ -133,7 +133,7 @@ let zobrazenaOtazka =0;
      console.log(i)
  } */
 
-//Pokus / z hodiny:
+//Pokus // z hodiny:
 /* poleOtazek.sort(porovnej);
  fucntion porovnej (cisl1, cisl3) {
 if (cisl1 = cisl2) {
@@ -143,7 +143,7 @@ if (cisl1 = cisl2) {
 }
 }; */
 
-let spravneOdpovezeno = O
+let spravneOdpovezeno = 0
 
 //Tady mi ještě chybí vměstnat, jak tu možnost zvolím..
 function spravnaOdpoved() {
@@ -193,9 +193,10 @@ function spravnaOdpoved3() {
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
 // Vypočítám skóre a nageneruje nové elementy do HTML
 // Touto funkcí končí můj program (budu se rozhodovat, zda ji zavolat v rámci klikNaOdpoved())
+
 function zobrazVyhodnoceni() {
 
-for (let i =0; i < otazky.length; i = i+1) {
+for (let a =0; a < otazky.length; a = a+1) {
 
 }
 
