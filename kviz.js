@@ -54,7 +54,7 @@ let foto = document.querySelector('.foto')
 let obrazek = document.querySelector('#obrazek')
 let moznosti = document.querySelector('#moznosti')
 let odpovedi = document.querySelector('#odpovedi');
-let vysledek = document.querySelector('.vysledek');
+/*let vysledek = document.querySelector('.vysledek');*/
 
 // Tato funkce se postará o vygenerování otázky
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení
@@ -109,17 +109,6 @@ function klikNaOdpoved() {
  }*/
  
 
-let spravneOdpovezeno = 0
-
-function spravnaOdpoved() {
-    if (spravne === poleOdpovedi[i]) {
-        console.log('Tohle je správně');
-        spravneOdpovezeno = spravneOdpovezeno + 1;
-    } else {
-        console.log('Tohle je špatně');
-    }
-}
-
 
 // Když už mám odpovězeno na vše (řídí se velikosí objektu otazky na řádku 3), tak mohu zobrazi výsledky
 // Vypočítám skóre a nageneruje nové elementy do HTML
@@ -127,13 +116,39 @@ function spravnaOdpoved() {
 
 function zobrazVyhodnoceni() {
 
- a = a + 1;
- 
-if (a < otazky[a].length) {
-    console.log('Otázka');
-    zobrazOtazku();
-} else {
-    console.log('Vyhodnocení')
-    zobrazVyhodnoceni()
-} 
+for (i=0; i < otazky[a].length; i=i+1) {
+let volbaOdpovedi = otazky[a].poleOdpovedi[i];
+let spravneOdpovezeno = 0;
+    
+if (volbaOdpovedi[i] == otazky[a].spravne) {
+        spravneOdpovezeno = spravneOdpovezeno + 1;
+        console.log('Tohle je správně');
+        } else {
+        console.log('Tohle je špatně');
+        }
+    }
+
+vypocitejVypisVysledek()
+
 }
+
+function vypocitejVysledek() {
+    let sto = 100;
+    let pocetOtazek = 4;
+    spravneOdpovezeno =+ 1;
+
+    return Math.round((spravneOdpovezeno * sto) / pocetOtazek );
+}
+
+function vypisVysledek(vysledek) {
+    document.querySelector('.vysledek > span').innerHTML = vysledek;
+}
+
+function vypocitejVypisVysledek() {
+    let vysledek = vypocitejVysledek();
+    vypisVysledek(vysledek);
+}
+
+document.querySelectorAll('input').forEach((element) => {
+    element.addEventListener('change', vypocitejVypisVysledek);
+});
