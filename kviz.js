@@ -59,27 +59,27 @@ let vysledek = document.querySelector('.vysledek');
 // Tato funkce se postará o vygenerování otázky
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení
 
- let zobrazenaOtazka =0;
+ let a =0;
 
  function zobrazOtazku() {
-    poradi.innerHTML = 'Otázka č. ' + otazky[zobrazenaOtazka].cisloOtazky;
-    obrazek.src = otazky[zobrazenaOtazka].obrazek;
-    otazka.innerHTML = otazky[zobrazenaOtazka].otazka;
+    poradi.innerHTML = 'Otázka č. ' + otazky[a].cisloOtazky;
+    obrazek.src = otazky[a].obrazek;
+    otazka.innerHTML = otazky[a].otazka;
 
-    for (let i=0; i < otazky[zobrazenaOtazka].poleOdpovedi.length; i=i+1) {
+    for (let i=0; i < otazky[a].poleOdpovedi.length; i=i+1) {
 
     let volba = document.createElement('li');
     volba.dataset.poleOdpovedi = i;
-    volba.innerHTML = otazky[zobrazenaOtazka].poleOdpovedi[i];
+    volba.innerHTML = otazky[a].poleOdpovedi[i];
     odpovedi.appendChild(volba);
 
     //hází mí to ty odpovědi dvakrát a nevím proč :( )
 
+    volba.addEventListener("click", klikNaOdpoved)
+    
      }
 
  }
-
-
 
  zobrazOtazku();
 
@@ -100,7 +100,7 @@ let spravneOdpovezeno = 0
 
 //Tady mi ještě chybí vměstnat, jak tu možnost zvolím..?!
 function spravnaOdpoved() {
-    if (spravne === moznostiOdpovedi[i]) {
+    if (spravne === mpoleOdpovedi[i]) {
         console.log('Tohle je správně');
         spravneOdpovezeno = spravneOdpovezeno + 1;
     } else {
@@ -113,9 +113,9 @@ function klikNaOdpoved() {
     /* for (let i= 0; i < pocetMoznosti; i=i+1) {
     otazka.addEventListener("click") }*/
 
-   zobrazenaOtazka = zobrazenaOtazka + 1;
+   a = a + 1;
 
-    if (zobrazenaOtazka < otazky.length) {
+    if (a < otazky[a].poleOdpovedi.length) {
         console.log('Otázka');
         zobrazOtazku();
     } else {
@@ -131,7 +131,7 @@ function klikNaOdpoved() {
 
 function zobrazVyhodnoceni() {
 
-for (let a =0; a < otazky.length; a = a+1) {
+for (let b =0; a < otazky.length; a = a+1) {
 
 }
 
