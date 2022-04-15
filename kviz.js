@@ -101,8 +101,14 @@ function klikNaOdpoved() {
      } 
  }
 
- //Odstranění předchozích odpovědí ze setu - nefunguje mi :(
+ //Odstranění předchozích odpovědí ze setu - nefunguje mi 
  
+     if (a > otazky[a].length)  {
+        odpovedi.remove(otazky[a].poleOdpovedi[i]);
+        console.log('Funguješ!')
+     } else {
+         console.log("Nefunguješ")
+     }
 
  /*for(a=0; a < otazky[a].poleOdpovedi.length; a=a+1) {
          odpovedi.remove(poleOdpovedi[i]);
