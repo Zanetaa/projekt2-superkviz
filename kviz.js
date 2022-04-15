@@ -16,9 +16,9 @@ let otazky = [{
     otazka: "Jaká je Žanety nejoblíbenější ovoce?",
     obrazek: "obrazky/ovoce.jpg",
     poleOdpovedi: ['Jahody', 'Třešně', 'Meloun'],
-    /*moznost1:'Jahody',
-    moznost2:'Třešně',
-    moznost3:'Meloun',*/
+    /*moznost[0]:'Jahody',
+    moznost[1]:'Třešně',
+    moznost[2]:'Meloun',*/
     spravne: 1,
     },
 
@@ -26,9 +26,9 @@ let otazky = [{
     otazka: "Která evrpská země má největší spotřebu piva na hlavu?",
     obrazek: "obrazky/pivo.jpg",
     poleOdpovedi: ['Česká republika', 'Belgie', 'Německo'],
-    /*moznost1:'Česká republika',
-    moznost2:'Belgie',
-    moznost3:'Německo',*/
+    /*moznost[0]:'Česká republika',
+    moznost[1]:'Belgie',
+    moznost[2]:'Německo',*/
     spravne: 0,
     },
 
@@ -69,11 +69,12 @@ let vysledek = document.querySelector('.vysledek');
     for (let i=0; i < otazky[a].poleOdpovedi.length; i=i+1) {
 
     let volba = document.createElement('li');
-    volba.dataset.poleOdpovedi = i;
-    volba.innerHTML = otazky[a].poleOdpovedi[i];
     odpovedi.appendChild(volba);
 
-    //hází mí to ty odpovědi dvakrát a nevím proč :( )
+
+    volba.dataset.poleOdpovedi = i;
+    volba.innerHTML = otazky[a].poleOdpovedi[i];
+   
 
     volba.addEventListener("click", klikNaOdpoved)
     
@@ -81,47 +82,42 @@ let vysledek = document.querySelector('.vysledek');
 
  }
 
- zobrazOtazku();
+ /*zobrazOtazku();*/
 
 // Funkce se postará o obsluhu kliknutí na odpověď
 // Musíme ji navázat na kokrétní odpovědi každé otázky (to uděláme v rámci funkce zobrazOtazku())
 
-//Pokus // z hodiny:
-/* poleOtazek.sort(porovnej);
- fucntion porovnej (cisl1, cisl3) {
-if (cisl1 = cisl2) {
-    return To je správně!;
-} else {
-    return To je špatně
-}
-}; */
+
+function klikNaOdpoved() {
+
+    a = a + 1;
+ 
+     if (a < otazky[a].poleOdpovedi.length) {
+         console.log('Otázka');
+         zobrazOtazku();
+     } else {
+         console.log('Vyhodnocení')
+         zobrazVyhodnoceni()
+     } 
+ }
+
+ //Odstranění předchozích odpovědí ze setu - nefunguje mi :(
+ 
+
+ /*for(a=0; a < otazky[a].poleOdpovedi.length; a=a+1) {
+         odpovedi.remove(poleOdpovedi[i]);
+ }*/
+ 
 
 let spravneOdpovezeno = 0
 
-//Tady mi ještě chybí vměstnat, jak tu možnost zvolím..?!
 function spravnaOdpoved() {
-    if (spravne === mpoleOdpovedi[i]) {
+    if (spravne === poleOdpovedi[i]) {
         console.log('Tohle je správně');
         spravneOdpovezeno = spravneOdpovezeno + 1;
     } else {
         console.log('Tohle je špatně');
     }
-}
-
-function klikNaOdpoved() {
-
-    /* for (let i= 0; i < pocetMoznosti; i=i+1) {
-    otazka.addEventListener("click") }*/
-
-   a = a + 1;
-
-    if (a < otazky[a].poleOdpovedi.length) {
-        console.log('Otázka');
-        zobrazOtazku();
-    } else {
-        console.log('Vyhodnocení')
-        zobrazVyhodnoceni()
-    } 
 }
 
 
@@ -131,8 +127,13 @@ function klikNaOdpoved() {
 
 function zobrazVyhodnoceni() {
 
-for (let b =0; a < otazky.length; a = a+1) {
-
-}
-
+ a = a + 1;
+ 
+if (a < otazky[a].length) {
+    console.log('Otázka');
+    zobrazOtazku();
+} else {
+    console.log('Vyhodnocení')
+    zobrazVyhodnoceni()
+} 
 }
