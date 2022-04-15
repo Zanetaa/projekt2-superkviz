@@ -101,14 +101,24 @@ function klikNaOdpoved() {
      } 
  }
 
- //Odstranění předchozích odpovědí ze setu - nefunguje mi 
+ //Odstranění předchozích odpovědí ze setu - nefunguje mi - odstraní mi všechny odpovědi
+
+/*
  
-     if (a > otazky[a].length)  {
-        odpovedi.remove(otazky[a].poleOdpovedi[i]);
-        console.log('Funguješ!')
+     if (otazky[a].cisloOtazky[2] === otazky[a].length)  {
+        odpovedi.remove(otazky[a].poleOdpovedi[0]);
+        console.log('Funguješ, ale blbě')
+     } else if (otazky[a].cisloOtazky[3] === otazky[a].length) {
+        odpovedi.remove(otazky[a].poleOdpovedi[1]);
+         console.log("Funguješ, ale blbě2")
+     } else if (otazky[a].cisloOtazky[4] === otazky[a].length) {
+        odpovedi.remove(otazky[a].poleOdpovedi[2]);
+         console.log("Funguješ!, ale blbě3")
      } else {
-         console.log("Nefunguješ")
-     }
+        console.log("Nefunguješ")
+    }
+
+*/
 
  /*for(a=0; a < otazky[a].poleOdpovedi.length; a=a+1) {
          odpovedi.remove(poleOdpovedi[i]);
