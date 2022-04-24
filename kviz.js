@@ -1,85 +1,92 @@
 // Nejdříve si vytvoř objekt, který bude držet tvoje super otázky :-)
 
-let otazky = [{
-    cisloOtazky: 1,
+const otazky = [{
+    /*cisloOtazky: 1,*/
     otazka: "Jaká je Žanety oblíbená pohádková princezna?",
-    obrazek: "obrazky/snehurka.jpg",
-    poleOdpovedi: ['Sněhurka', 'Popelka', 'Malá mořská víla Ariel'],
+    obrazek: "snehurka.jpg",
+    odpovedi: ['Sněhurka', 'Popelka', 'Malá mořská víla Ariel'],
     /*moznost[0]:'Sněhurka',
     moznost[1]:'Popelka',
     moznost[2]:'Malá mořská víla Ariel',*/
-    spravne: 0,
+    spravna: 0,
     },
 
     {   
-    cisloOtazky: 2,
+    /*cisloOtazky: 2,*/
     otazka: "Jaká je Žanety nejoblíbenější ovoce?",
-    obrazek: "obrazky/ovoce.jpg",
-    poleOdpovedi: ['Jahody', 'Třešně', 'Meloun'],
+    obrazek: "ovoce.jpg",
+    odpovedi: ['Jahody', 'Třešně', 'Meloun'],
     /*moznost[0]:'Jahody',
     moznost[1]:'Třešně',
     moznost[2]:'Meloun',*/
-    spravne: 1,
+    spravna: 1,
     },
 
-    {cisloOtazky: 3,
+    {
+    /*cisloOtazky: 3,*/
     otazka: "Která evrpská země má největší spotřebu piva na hlavu?",
-    obrazek: "obrazky/pivo.jpg",
-    poleOdpovedi: ['Česká republika', 'Belgie', 'Německo'],
+    obrazek: "pivo.jpg",
+    odpovedi: ['Česká republika', 'Belgie', 'Německo'],
     /*moznost[0]:'Česká republika',
     moznost[1]:'Belgie',
     moznost[2]:'Německo',*/
-    spravne: 0,
+    spravna: 0,
     },
 
-    {cisloOtazky: 4,
+    {
+    /*cisloOtazky: 4,*/
     otazka: "Co je ikonická hračka z 80. let?",
-    obrazek: "obrazky/moncicak.jpg",
-    poleOdpovedi: ['Kočičák', 'Mončičák', 'Opičák'],
+    obrazek: "moncicak.jpg",
+    odpovedi: ['Kočičák', 'Mončičák', 'Opičák'],
     /*moznost[0]:'Kočičák',
     moznosz[1]:'Mončičák',
     moznost[2]:'Opičák',*/
-    spravne: 1,
+    spravna: 1,
     },
 
 ];
 
 // Dále budeš potřebovat další proměnné - jaké?
 
-let kviz = document.querySelector('.kviz')
-let poradi = document.querySelector('#poradi')
-let otazka = document.querySelector('#otazka')
-let obsah = document.querySelector('.obsah')
-let foto = document.querySelector('.foto')
-let obrazek = document.querySelector('#obrazek')
-let moznosti = document.querySelector('#moznosti')
-let odpovedi = document.querySelector('#odpovedi');
+/*let kviz = document.querySelector('.kviz')*/
+const poradi = document.querySelector('#poradi');
+const otazka = document.querySelector('#otazka');
+/*let obsah = document.querySelector('.obsah')
+let foto = document.querySelector('.foto')*/
+const obrazek = document.querySelector('#obrazek');
+const moznosti = document.querySelector('#moznosti');
+/*let odpovedi = document.querySelector('#odpovedi');*/
 /*let vysledek = document.querySelector('.vysledek');*/
 
 // Tato funkce se postará o vygenerování otázky
 // Zavoláme ji jednou na začátku a poté vždy po odpovězení
 
- let a =0;
+ let aktualniOtazka = 0;
+ let mojeOdpovedi = [];
+
+ zobrazOtazku();
 
  function zobrazOtazku() {
-    poradi.innerHTML = 'Otázka č. ' + otazky[a].cisloOtazky;
-    obrazek.src = otazky[a].obrazek;
-    otazka.innerHTML = otazky[a].otazka;
-
-    for (let i=0; i < otazky[a].poleOdpovedi.length; i=i+1) {
-
-    let volba = document.createElement('li');
-    odpovedi.appendChild(volba);
-
-
-    volba.dataset.poleOdpovedi = i;
-    volba.innerHTML = otazky[a].poleOdpovedi[i];
-   
-
-    volba.addEventListener("click", klikNaOdpoved)
-    
+     poradi.textContent = 'Otázka ' + (aktualniOtazka + 1) + ' / ' + otazky.length;
+     otazka.textContent = otazky[aktualniOtazka].otazka;
+     obrazek.src = 'obrazky/' + otazky[aktualniOtazka].obrazek;
+ 
+ 
+     let odpovedi = otazky[aktualniOtazka].odpovedi;
+ 
+     let seznam = document.createElement('ul');
+     seznam.id = 'odpovedi';
+ 
+     for (let i = 0; i < odpovedi.length; i=i+1) {
+         let polozka = document.createElement('li');
+         polozka.dataset.odpoved = i;
+         polozka.textContent = odpovedi[i];
+         polozka.onclick = klikNaOdpoved;
+         seznam.appendChild(polozka);
      }
-
+ 
+     document.querySelector('#odpovedi').remove();
+     moznosti.appendChild(seznam);
  }
 
  /*zobrazOtazku();*/
@@ -88,7 +95,7 @@ let odpovedi = document.querySelector('#odpovedi');
 // Musíme ji navázat na kokrétní odpovědi každé otázky (to uděláme v rámci funkce zobrazOtazku())
 
 
-function klikNaOdpoved() {
+/*function klikNaOdpoved() {
 
     a = a + 1;
  
@@ -99,6 +106,22 @@ function klikNaOdpoved() {
          console.log('Vyhodnocení')
          zobrazVyhodnoceni()
      } 
+ }*/
+
+ function klikNaOdpoved() {
+
+	let odpoved = event.target.dataset.odpoved;
+
+	mojeOdpovedi.push(odpoved);
+
+	aktualniOtazka = aktualniOtazka + 1;
+
+	if (aktualniOtazka === otazky.length) {
+		zobrazVyhodnoceni();
+	} else {
+		zobrazOtazku();
+	}
+
  }
 
  //Odstranění předchozích odpovědí ze setu - nefunguje mi - odstraní mi všechny odpovědi
@@ -130,7 +153,9 @@ function klikNaOdpoved() {
 // Vypočítám skóre a nageneruje nové elementy do HTML
 // Touto funkcí končí můj program (budu se rozhodovat, zda ji zavolat v rámci klikNaOdpoved())
 
-function zobrazVyhodnoceni() {
+
+
+/*function zobrazVyhodnoceni() {
 
 for (i=0; i < otazky[a].length; i=i+1) {
 let volbaOdpovedi = otazky[a].poleOdpovedi[i];
@@ -146,8 +171,9 @@ if (volbaOdpovedi[i] == otazky[a].spravne) {
 
 vypocitejVypisVysledek()
 
-}
+} */
 
+/*
 function vypocitejVysledek() {
     let sto = 100;
     let pocetOtazek = 4;
@@ -167,4 +193,41 @@ function vypocitejVypisVysledek() {
 
 document.querySelectorAll('input').forEach((element) => {
     element.addEventListener('change', vypocitejVypisVysledek);
-});
+}); */
+
+function zobrazVyhodnoceni() {
+	// skryjeme div s otazkami
+	document.querySelector('.kviz').style.display = 'none';
+	// a objevime div s vyhodnocenim
+	document.querySelector('.vysledek').style.display = 'block';
+	// najdeme si div, do ktereho budeme vypisovat text
+	const hodnoceni = document.querySelector('#hodnoceni');
+	// vypiseme pole - to je jen prechodne, takhle to delat nebudeme
+	console.log(mojeOdpovedi);
+
+	let pocetSpravnych = 0;
+
+	for (let i = 0; i < otazky.length; i= i+1) {
+		let nadpis = document.createElement('h3');
+		nadpis.textContent = (i + 1) + '. ' + otazky[i].otazka;
+		hodnoceni.appendChild(nadpis);
+
+		let moje = document.createElement('p');
+		moje.textContent = 'Tvoje odpověď: ' + otazky[i].odpovedi[mojeOdpovedi[i]];
+		hodnoceni.appendChild(moje);
+
+		let spravne = document.createElement('p');
+		if (parseInt(mojeOdpovedi[i]) === otazky[i].spravna) {
+			pocetSpravnych++;
+			spravne.textContent = 'To je SPRÁVNĚ.';
+		} else {
+			spravne.textContent = 'Správná odpověď: ' + otazky[i].odpovedi[otazky[i].spravna];
+		}
+		hodnoceni.appendChild(spravne);
+	}
+
+	let procenta = document.createElement('h2');
+	procenta.textContent += 'Správně ' + pocetSpravnych + ' ze ' + otazky.length + ' otázek. Úspěšnost ' + Math.round(pocetSpravnych / otazky.length * 100) + ' %.';
+	hodnoceni.appendChild(procenta); 
+
+}
